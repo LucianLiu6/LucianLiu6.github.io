@@ -1,9 +1,13 @@
 {
-  "name": "hexo-site",
+  "name": "LucianTalk",
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": ""
+    "version": "3.9.0"
+  },
+  "scripts": {
+    "serve": "hexo server",
+    "dev": "hexo server --debug"
   },
   "dependencies": {
     "hexo": "^3.9.0",
