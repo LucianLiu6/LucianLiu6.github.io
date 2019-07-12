@@ -14,7 +14,7 @@ tags:
 ```shell
 docker run -d -p ${host_exposed_port}:8888 --name=${container_name} -v ${host_volumn}:/home/jovyan jupyter/minimal-notebook
 ```
-简单说下启动命令里面的几个参数
+简单说下启动命令里面的几个变量
 * `host_exposed_port` - 可选  
     需要暴露的宿主机端口，供其它机器访问本 Jupyter notebook  
     不需要的话就去掉 `-p ${host_exposed_port}:8888` 这个参数
@@ -39,7 +39,8 @@ docker run -d -p ${host_exposed_port}:8888 --name=${container_name} -v ${host_vo
 
 通过 Token 登录很不方便，如果下次换了个设备登录又要重新输入 Token，所以我们需要自己设个容易记忆的密码；如果你有一个可以记住 48 位 Token 的最强大脑的话就可以不用往下看了。像我这种凡夫俗子还是规规矩矩用密码吧
 
-页面底部不就有个 `Setup a Password` 嘛，还用你在这儿叨叨？  
+## 设置登录密码
+登录页面底部不就有个 `Setup a Password` 嘛，还用你在这儿叨叨？  
 最开始我也是这么想的，把 Token 和 Password 往框框里面一填，开心地点了下 **Log in and set new password** ，结果得到了一个无情的 `500: Internal Server Error`
 
 ![unexpected-500](unexpected-500.png)
