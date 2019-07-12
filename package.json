@@ -8,7 +8,9 @@
   "scripts": {
     "serve": "hexo server",
     "dev": "hexo server --debug",
-    "hexo": "hexo"
+    "hexo": "hexo",
+    "generate": "hexo generate",
+    "deploy": "hexo deploy"
   },
   "dependencies": {
     "hexo": "^3.9.0",
