@@ -81,3 +81,7 @@ deploy:
   type: git
   repo: git@github.com:LucianLiu6/lucianliu6.github.io.git
   branch: master
+
+# Enable passwd
+encrypt:
+    enable: true
