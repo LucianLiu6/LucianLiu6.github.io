@@ -97,17 +97,14 @@
   <meta name="description" content="Setup Jupyter in Docker获取 Jupyter 镜像并启动如果在 Docker Hub 中搜索 jupyter 会有很多官方镜像，我们从中选一个名为 jupyter/minimal-notebook 的镜像来构建容器">
 <meta property="og:type" content="article">
 <meta property="og:title" content="setup-jupyter-in-docker">
-<meta property="og:url" content="http://yoursite.com/2019/07/10/setup-jupyter-in-docker/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/07/10/test/index.html">
 <meta property="og:site_name" content="LucianTalk">
 <meta property="og:description" content="Setup Jupyter in Docker获取 Jupyter 镜像并启动如果在 Docker Hub 中搜索 jupyter 会有很多官方镜像，我们从中选一个名为 jupyter/minimal-notebook 的镜像来构建容器">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2019/07/10/setup-jupyter-in-docker/set-password.png">
-<meta property="og:image" content="http://yoursite.com/2019/07/10/setup-jupyter-in-docker/unexpected-500.png">
-<meta property="og:updated_time" content="2019-07-12T09:29:24.037Z">
+<meta property="og:updated_time" content="2019-07-15T08:10:48.880Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="setup-jupyter-in-docker">
 <meta name="twitter:description" content="Setup Jupyter in Docker获取 Jupyter 镜像并启动如果在 Docker Hub 中搜索 jupyter 会有很多官方镜像，我们从中选一个名为 jupyter/minimal-notebook 的镜像来构建容器">
-<meta name="twitter:image" content="http://yoursite.com/2019/07/10/setup-jupyter-in-docker/set-password.png">
 
 
 
@@ -115,7 +112,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/07/10/setup-jupyter-in-docker/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/10/test/">
 
 
 
@@ -336,7 +333,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/10/setup-jupyter-in-docker/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/10/test/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lucian Liu">
@@ -394,7 +391,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-12 17:29:24" itemprop="dateModified" datetime="2019-07-12T17:29:24+08:00">2019-07-12</time>
+                <time title="修改时间：2019-07-15 16:10:48" itemprop="dateModified" datetime="2019-07-15T16:10:48+08:00">2019-07-15</time>
               </span>
             
           
@@ -450,10 +447,10 @@
 </li>
 </ul>
 <h2 id="登录-Jupyter-Notebook"><a href="#登录-Jupyter-Notebook" class="headerlink" title="登录 Jupyter Notebook"></a>登录 Jupyter Notebook</h2><p>安装好之后就可以通过 <code>http://${host_name}:${host_exposed_port}</code> 来访问 Jupyter Notebook 了，第一次访问需要提供 Login Token，Token 会在 Notebook 启动的时候输出到控制台，查看容器的日志即可找到 (<code>docker logs ${CONTAINER-ID}</code>)。正常可以看到这样的页面：</p>
-<p><img src="set-password.png" alt="set-password"></p>
+<p>===========</p>
 <p>通过 Token 登录很不方便，如果下次换了个设备登录又要重新输入 Token，所以我们需要自己设个容易记忆的密码；如果你有一个可以记住 48 位 Token 的最强大脑的话就可以不用往下看了。像我这种凡夫俗子还是规规矩矩用密码吧</p>
 <h2 id="设置登录密码"><a href="#设置登录密码" class="headerlink" title="设置登录密码"></a>设置登录密码</h2><p>登录页面底部不就有个 <code>Setup a Password</code> 嘛，还用你在这儿叨叨？<br>最开始我也是这么想的，把 Token 和 Password 往框框里面一填，开心地点了下 <strong>Log in and set new password</strong> ，结果得到了一个无情的 <code>500: Internal Server Error</code></p>
-<p><img src="unexpected-500.png" alt="unexpected-500"><br><strong>??? What the hell ???</strong></p>
+<p>===========<br><strong>??? What the hell ???</strong></p>
 <p>淡定淡定，先看看容器的 Log (<code>docker logs ${CONTAINER-ID}</code>)，果然发现了猫腻所在</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FileNotFoundError: [Errno 2] No such file or directory: '/home/jovyan/.jupyter/jupyter_notebook_config.json'</span><br></pre></td></tr></table></figure>
 
@@ -506,15 +503,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/10/test/" rel="next" title="setup-jupyter-in-docker">
-                <i class="fa fa-chevron-left"></i> setup-jupyter-in-docker
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/10/setup-jupyter-in-docker/" rel="prev" title="setup-jupyter-in-docker">
+                setup-jupyter-in-docker <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
